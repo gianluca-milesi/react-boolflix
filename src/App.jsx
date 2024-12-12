@@ -20,7 +20,9 @@ import About from "./pages/About/About.jsx"
 function App() {
 
   const [films, setFilms] = useState([])
+  // const [filteredFilms, setFilteredFilms] = useState([]);
 
+  //FUNZIONI
   //Fetch Movies
   function fetchMoviesByTitle(movie = "") {
     axios.get(`${API_MOVIES_URI}&query=${movie}`)
@@ -43,9 +45,18 @@ function App() {
       })
   }
 
+  // //Filter
+  // function filterFilms(searched) {
+  //   const filtered = films.filter((film) =>
+  //     (film.title.toLowerCase().includes(searched.toLowerCase())) ||
+  //     (film.name.toLowerCase().includes(searched.toLowerCase()))
+  //   )
+  //   setFilteredFilms(filtered)
+  // }
+
 
   return (
-    <GlobalContext.Provider value={{ films, fetchMoviesByTitle, fetchSeriesByTitle }}>
+    <GlobalContext.Provider value={{ films, fetchMoviesByTitle, fetchSeriesByTitle, filteredFilms, filterFilms }}>
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
