@@ -8,10 +8,10 @@ import GlobalContext from "../../context/GlobalContext"
 
 function Home() {
 
-    const { films, fetchFilms } = useContext(GlobalContext)
+    const { films, fetchFilmsByTitle } = useContext(GlobalContext)
 
     useEffect(() => {
-        fetchFilms()
+        fetchFilmsByTitle()
     }, [])
 
 

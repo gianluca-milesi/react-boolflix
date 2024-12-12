@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from "react"
 
 function SearchBar() {
 
-    const { fetchFilms } = useContext(GlobalContext)
+    const { fetchFilmsByTitle } = useContext(GlobalContext)
 
     const [search, setSearch] = useState("")
 
@@ -17,7 +17,7 @@ function SearchBar() {
     }
 
     function filterFilms() {
-        fetchFilms(search)
+        fetchFilmsByTitle(search)
     }
 
 
