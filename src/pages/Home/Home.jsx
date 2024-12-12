@@ -29,9 +29,9 @@ function Home() {
             <section>
                 <div className="container">
                     <div className="row">
-                        {films.map((film) => (
-                            <div key={film.id} className="col-4">
-                                <Card item={film} />
+                        {films.map((movie) => (
+                            <div key={movie.id} className="col-4">
+                                <Card item={movie} />
                             </div>
                         ))}
                     </div>

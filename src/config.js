@@ -1,5 +1,6 @@
 //TheMovieDB
-export const API_BASE_URI = "https://api.themoviedb.org/3/search/movie?api_key=086f17d86aa6687746c193c96c659fe8";
+export const API_MOVIES_URI = "https://api.themoviedb.org/3/search/movie?api_key=086f17d86aa6687746c193c96c659fe8"
+export const API_SERIES_URI = "https://api.themoviedb.org/3/search/tv?api_key=086f17d86aa6687746c193c96c659fe8"
 
 //React world flags
 export const flags = {

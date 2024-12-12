@@ -9,7 +9,7 @@ import { useContext, useState } from "react"
 
 function SearchBar() {
 
-    const { fetchFilmsByTitle } = useContext(GlobalContext)
+    const { fetchMoviesByTitle, fetchSeriesByTitle } = useContext(GlobalContext)
 
     const [search, setSearch] = useState("")
     const navigate = useNavigate()
@@ -21,7 +21,8 @@ function SearchBar() {
     }
     //Functions
     function filterFilms() {
-        fetchFilmsByTitle(search)
+        fetchMoviesByTitle(search)
+        fetchSeriesByTitle(search)
         navigate("/")
     }
 

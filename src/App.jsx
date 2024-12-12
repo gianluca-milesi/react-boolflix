@@ -1,6 +1,7 @@
 //Axios
 import axios from "axios"
-import { API_BASE_URI } from "./config.js"
+import { API_MOVIES_URI } from "./config.js"
+import { API_SERIES_URI } from "./config.js"
 //React router
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 //Hooks
@@ -20,8 +21,20 @@ function App() {
 
   const [films, setFilms] = useState([])
 
-  function fetchFilmsByTitle(film = "") {
-    axios.get(`${API_BASE_URI}&query=${film}`)
+  //Fetch Movies
+  function fetchMoviesByTitle(movie = "") {
+    axios.get(`${API_MOVIES_URI}&query=${movie}`)
+      .then((res) => {
+        setFilms(res.data.results)
+      })
+      .catch((err) => {
+        console.error(err)
+      })
+  }
+
+  //Fetch TV Series
+  function fetchSeriesByTitle(serie = "") {
+    axios.get(`${API_SERIES_URI}&query=${serie}`)
       .then((res) => {
         setFilms(res.data.results)
       })
@@ -32,7 +45,7 @@ function App() {
 
 
   return (
-    <GlobalContext.Provider value={{ films, fetchFilmsByTitle }}>
+    <GlobalContext.Provider value={{ films, fetchMoviesByTitle, fetchSeriesByTitle }}>
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
