@@ -1,10 +1,11 @@
 import style from "./Home.module.css"
 //Hooks
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 //Components
-import SearchBar from "../../components/SearchBar/SearchBar"
+// import SearchBar from "../../components/SearchBar/SearchBar"
 import Card from "../../components/Card/Card"
 import GlobalContext from "../../context/GlobalContext"
+
 
 function Home() {
 
@@ -19,11 +20,11 @@ function Home() {
                 </div>
             </section>
 
-            <section>
+            {/* <section>
                 <div className="container">
                     <SearchBar />
                 </div>
-            </section>
+            </section> */}
 
             <section>
                 <div className="container">

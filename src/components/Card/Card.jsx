@@ -1,6 +1,7 @@
 import style from "./Card.module.css"
 import { flags } from "../../config.js"
 
+
 function Card({ item = {} }) {
 
     const { poster_path, title, original_title, original_language, vote_average } = item

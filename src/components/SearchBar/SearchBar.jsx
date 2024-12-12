@@ -1,14 +1,18 @@
 import style from "./SearchBar.module.css"
 //Context
 import GlobalContext from "../../context/GlobalContext"
+//React router
+import { useNavigate } from "react-router-dom"
 //Hooks
 import { useContext, useState } from "react"
+
 
 function SearchBar() {
 
     const { fetchFilmsByTitle } = useContext(GlobalContext)
 
     const [search, setSearch] = useState("")
+    const navigate = useNavigate()
 
     //Handlers
     function handleSearch(event) {
@@ -18,6 +22,7 @@ function SearchBar() {
     //Functions
     function filterFilms() {
         fetchFilmsByTitle(search)
+        navigate("/")
     }
 
 

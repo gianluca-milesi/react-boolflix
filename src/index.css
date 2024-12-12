@@ -66,3 +66,17 @@ img {
   border-radius: 10px;
   transition: 0.3s;
 }
+
+
+/* MEDIA QUERIES */
+@media (min-width: 576px) and (max-width: 768px) {
+  .col-4 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 575px) {
+  .col-4 {
+    width: 100%;
+  }
+}
