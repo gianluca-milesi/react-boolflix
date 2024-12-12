@@ -16,6 +16,9 @@ function SearchBar() {
         setSearch(value)
     }
 
+    function filterFilms() {
+        fetchFilms(search)
+    }
 
 
     return (

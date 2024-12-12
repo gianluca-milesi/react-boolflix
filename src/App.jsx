@@ -17,8 +17,8 @@ function App() {
 
   const [films, setFilms] = useState([])
 
-  function fetchFilms() {
-    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=086f17d86aa6687746c193c96c659fe8&query=${search}`)
+  function fetchFilms(film = "") {
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=086f17d86aa6687746c193c96c659fe8&query=${film}`)
       .then((res) => {
         setFilms(res.data.results)
       })

@@ -32,9 +32,11 @@ function Home() {
             <section>
                 <div className="container">
                     <div className="row">
-                        <div className="col-4">
-                            <Card />
-                        </div>
+                        {films.map((film) => (
+                            <div key={film.id} className="col-4">
+                                <Card item={film} />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
