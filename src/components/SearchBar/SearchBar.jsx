@@ -4,12 +4,12 @@ import GlobalContext from "../../context/GlobalContext"
 //React router
 import { useNavigate } from "react-router-dom"
 //Hooks
-import { useContext, useState, useEffect } from "react"
+import { useContext, useState } from "react"
 
 
 function SearchBar() {
 
-    const { fetchMoviesByTitle, fetchSeriesByTitle, filterFilms } = useContext(GlobalContext)
+    const { fetchMoviesByTitle, fetchSeriesByTitle } = useContext(GlobalContext)
 
     const [search, setSearch] = useState("")
     const navigate = useNavigate()
