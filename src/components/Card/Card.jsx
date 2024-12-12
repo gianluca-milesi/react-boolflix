@@ -4,7 +4,8 @@ import { flags } from "../../config.js"
 
 function Card({ item = {} }) {
 
-    const { poster_path, title, original_title, original_language, vote_average } = item
+    const { poster_path, title, original_title, original_language, vote_average } = item //Movies
+    const { name, original_name } = item //TV Series
 
     const pathImage = "https://image.tmdb.org/t/p/w500"
     const languageFlag = flags[original_language]
@@ -17,8 +18,8 @@ function Card({ item = {} }) {
             </figure>
             <div className={style.card_body}>
                 <div className={style.titles}>
-                    <h3>{title}</h3>
-                    <h5>{original_title}</h5>
+                    <h3>{title || name}</h3>
+                    <h5>{original_title || original_name}</h5>
                 </div>
                 <div className={style.details}>
                     <div className={style.language}>
