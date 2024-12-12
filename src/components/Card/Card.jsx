@@ -7,7 +7,7 @@ function Card({ item = {} }) {
     return (
         <div className="card">
             <figure>
-                <img src="..." />
+                <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
             </figure>
             <div className="card_body">
                 <h3>{title}</h3>
