@@ -2,7 +2,7 @@ import style from "./SearchBar.module.css"
 //Context
 import GlobalContext from "../../context/GlobalContext"
 //Hooks
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 
 function SearchBar() {
 
@@ -10,12 +10,12 @@ function SearchBar() {
 
     const [search, setSearch] = useState("")
 
-    //Handler
+    //Handlers
     function handleSearch(event) {
         const value = event.target.value
         setSearch(value)
     }
-
+    //Functions
     function filterFilms() {
         fetchFilmsByTitle(search)
     }

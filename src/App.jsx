@@ -29,8 +29,6 @@ function App() {
   }
 
 
-
-
   return (
     <GlobalContext.Provider value={{ films, fetchFilmsByTitle }}>
       <BrowserRouter>
