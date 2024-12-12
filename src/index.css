@@ -44,6 +44,7 @@ img {
 .row {
   display: flex;
   flex-wrap: wrap;
+  row-gap: 1rem;
 }
 
 .col-12 {
