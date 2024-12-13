@@ -15,19 +15,22 @@ import BlankLayout from "./layouts/BlankLayout.jsx"
 import NotFound from "./pages/NotFound/NotFound.jsx"
 import Home from "./pages/Home/Home.jsx"
 import About from "./pages/About/About.jsx"
+import Main from "./components/Main/Main.jsx"
+import Header from "./layouts/Header/Header.jsx"
 
 
 function App() {
 
-  const [films, setFilms] = useState([])
-  // const [filteredFilms, setFilteredFilms] = useState([]);
+  const [movies, setMovies] = useState([])
+  const [series, setSeries] = useState([])
+  const [query, setQuery] = useState("")
 
   //FUNZIONI
   //Fetch Movies
-  function fetchMoviesByTitle(movie = "") {
-    axios.get(`${API_MOVIES_URI}&query=${movie}`)
+  function fetchMoviesByTitle() {
+    axios.get(`${API_MOVIES_URI}&query=${query}`)
       .then((res) => {
-        setFilms(res.data.results)
+        setMovies(res.data.results)
       })
       .catch((err) => {
         console.error(err)
@@ -35,10 +38,10 @@ function App() {
   }
 
   //Fetch TV Series
-  function fetchSeriesByTitle(serie = "") {
-    axios.get(`${API_SERIES_URI}&query=${serie}`)
+  function fetchSeriesByTitle() {
+    axios.get(`${API_SERIES_URI}&query=${query}`)
       .then((res) => {
-        setFilms(res.data.results)
+        setSeries(res.data.results)
       })
       .catch((err) => {
         console.error(err)
@@ -56,7 +59,7 @@ function App() {
 
 
   return (
-    <GlobalContext.Provider value={{ films, fetchMoviesByTitle, fetchSeriesByTitle }}>
+    <GlobalContext.Provider value={{ movies, series, query, setQuery, fetchMoviesByTitle, fetchSeriesByTitle }}>
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>

@@ -9,21 +9,22 @@ import { useContext, useState } from "react"
 
 function SearchBar() {
 
-    const { fetchMoviesByTitle, fetchSeriesByTitle } = useContext(GlobalContext)
+    const { query, setQuery, fetchMoviesByTitle, fetchSeriesByTitle } = useContext(GlobalContext)
 
-    const [search, setSearch] = useState("")
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     //Handlers
     function handleSearch(event) {
         const value = event.target.value
-        setSearch(value)
+        setQuery(value)
     }
     //Functions
-    function filterFilms() {
-        fetchMoviesByTitle(search)
-        fetchSeriesByTitle(search)
-        navigate("/")
+    function submit(event) {
+        event.preventDefault()
+
+        fetchMoviesByTitle()
+        fetchSeriesByTitle()
+        // navigate("/")
     }
     // function executeSearch() {
     //     fetchMoviesByTitle(search)
@@ -36,10 +37,12 @@ function SearchBar() {
 
 
     return (
-        <div className={style.search_form}>
-            <input className={style.search_bar} type="text" name="" id="" placeholder="Cerca" value={search} onChange={handleSearch} />
-            <button className={style.search_button} onClick={filterFilms}>Cerca</button>
-        </div>
+        <form onSubmit={submit}>
+            <div className={style.search_form}>
+                <input className={style.search_bar} type="text" name="query" placeholder="Cerca" value={query} onChange={handleSearch} />
+                <button className={style.search_button} onClick={submit}>Cerca</button>
+            </div>
+        </form>
     )
 }
 

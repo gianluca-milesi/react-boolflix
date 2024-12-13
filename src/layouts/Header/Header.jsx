@@ -6,9 +6,7 @@ import Navbar from "../../components/Navbar/Navbar"
 function Header() {
     return (
         <header>
-            <div className="container">
-                <Navbar />
-            </div>
+            <Navbar />
         </header>
     )
 }

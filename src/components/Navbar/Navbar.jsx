@@ -8,6 +8,7 @@ function Navbar() {
     return (
         <nav className={style.navbar}>
             <ul className={style.main_menu}>
+                <li><img className={style.logo} src="https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" /></li>
                 <li><NavLink to="/">Home</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>
             </ul>
