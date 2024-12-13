@@ -1,11 +1,11 @@
 import style from "./Home.module.css"
 //Hooks
-import { useContext } from "react"
-//Components
-import DataFetch from "../DataFetch/DataFetch.jsx"
-// import SearchBar from "../../components/SearchBar/SearchBar"
-import Card from "../../components/Card/Card"
-import GlobalContext from "../../context/GlobalContext"
+// import { useContext } from "react"
+// //Components
+// import DataFetch from "../DataFetch/DataFetch.jsx"
+// // import SearchBar from "../../components/SearchBar/SearchBar"
+// import Card from "../../components/Card/Card"
+// import GlobalContext from "../../context/GlobalContext"
 
 
 function Home() {
@@ -44,9 +44,11 @@ function Home() {
         //     </section>
         // </main>
         <main>
-            <div className="container">
-                <h1>Home Page</h1>
-            </div>
+            <section>
+                <div className="container">
+                    <h1>Home Page</h1>
+                </div>
+            </section>
         </main>
     )
 }
