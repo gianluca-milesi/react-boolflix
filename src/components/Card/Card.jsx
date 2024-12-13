@@ -1,5 +1,6 @@
 import style from "./Card.module.css"
 import { flags } from "../../config.js"
+import placeholder from "../../assets/placeholder.jpg"
 
 
 function Card({ item = {} }) {
@@ -14,7 +15,7 @@ function Card({ item = {} }) {
     return (
         <div className={style.card}>
             <figure>
-                <img className={style.film_image} src={`${pathImage}${poster_path}`} />
+                <img className={style.film_image} src={`${pathImage}${poster_path}` || placeholder} />
             </figure>
             <div className={style.card_body}>
                 <div className={style.titles}>

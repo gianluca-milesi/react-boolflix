@@ -5,14 +5,12 @@ import Card from "../Card/Card.jsx"
 
 function ItemList({ title, items = [] }) {
     return (
-        <section className={style.movies_section}>
+        <section className={style.fetched_data_section}>
             <div className="container">
                 <h2>{title}</h2>
-            </div>
-            <div className="container">
-                <ul>
+                <ul className="row">
                     {items.map((item) => (
-                        <li key={item.id}><Card item={item} /></li>
+                        <li key={item.id} className="col-4"><Card item={item} /></li>
                     ))}
                 </ul>
             </div>

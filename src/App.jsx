@@ -4,10 +4,10 @@ import { API_MOVIES_URI } from "./config.js"
 import { API_SERIES_URI } from "./config.js"
 //React router
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-//Hooks
-import { useState } from "react"
 //Context
 import GlobalContext from "./context/GlobalContext.js"
+//Hooks
+import { useState } from "react"
 //Layouts
 import DefaultLayout from "./layouts/DefaultLayout.jsx"
 import BlankLayout from "./layouts/BlankLayout.jsx"
@@ -16,7 +16,6 @@ import NotFound from "./pages/NotFound/NotFound.jsx"
 import Home from "./pages/Home/Home.jsx"
 import About from "./pages/About/About.jsx"
 import Main from "./components/Main/Main.jsx"
-import Header from "./layouts/Header/Header.jsx"
 
 
 function App() {
@@ -48,15 +47,6 @@ function App() {
       })
   }
 
-  // //Filter
-  // function filterFilms(searched) {
-  //   const filtered = films.filter((film) =>
-  //     (film.title.toLowerCase().includes(searched.toLowerCase())) ||
-  //     (film.name.toLowerCase().includes(searched.toLowerCase()))
-  //   )
-  //   setFilteredFilms(filtered)
-  // }
-
 
   return (
     <GlobalContext.Provider value={{ movies, series, query, setQuery, fetchMoviesByTitle, fetchSeriesByTitle }}>
@@ -64,6 +54,7 @@ function App() {
         <Routes>
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<About />}></Route>
             <Route path="/about" element={<About />}></Route>
           </Route>
           <Route element={<BlankLayout />}>

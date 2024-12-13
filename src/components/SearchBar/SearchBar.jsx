@@ -2,9 +2,9 @@ import style from "./SearchBar.module.css"
 //Context
 import GlobalContext from "../../context/GlobalContext"
 //React router
-import { useNavigate } from "react-router-dom"
+// import { useNavigate } from "react-router-dom"
 //Hooks
-import { useContext, useState } from "react"
+import { useContext } from "react"
 
 
 function SearchBar() {
@@ -26,14 +26,6 @@ function SearchBar() {
         fetchSeriesByTitle()
         // navigate("/")
     }
-    // function executeSearch() {
-    //     fetchMoviesByTitle(search)
-    //     fetchSeriesByTitle(search)
-    //     // setTimeout(()=>{
-    //     //     filterFilms(search)
-    //     // }, 1000)
-    //     navigate("/");
-    // }
 
 
     return (

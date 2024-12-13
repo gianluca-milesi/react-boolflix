@@ -1,8 +1,10 @@
 import style from "./Main.module.css"
 //Components
 import ItemList from "../ItemList/ItemList";
-import { useContext } from "react";
+//Context
 import GlobalContext from "../../context/GlobalContext";
+//Hook
+import { useContext } from "react";
 
 
 function Main() {
