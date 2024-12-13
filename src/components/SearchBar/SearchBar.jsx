@@ -2,16 +2,16 @@ import style from "./SearchBar.module.css"
 //Context
 import GlobalContext from "../../context/GlobalContext"
 //React router
-// import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 //Hooks
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 
 
 function SearchBar() {
 
     const { query, setQuery, fetchMoviesByTitle, fetchSeriesByTitle } = useContext(GlobalContext)
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     //Handlers
     function handleSearch(event) {
@@ -24,8 +24,15 @@ function SearchBar() {
 
         fetchMoviesByTitle()
         fetchSeriesByTitle()
-        // navigate("/")
+        navigate("/search")
     }
+
+    //Fetch ogni volta
+    useEffect(() => {
+        navigate("/search")
+        fetchMoviesByTitle()
+        fetchSeriesByTitle()
+    }, [query])
 
 
     return (

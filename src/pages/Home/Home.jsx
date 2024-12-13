@@ -2,7 +2,7 @@ import style from "./Home.module.css"
 //Hooks
 import { useContext } from "react"
 //Components
-import Main from "../../components/Main/Main.jsx"
+import DataFetch from "../DataFetch/DataFetch.jsx"
 // import SearchBar from "../../components/SearchBar/SearchBar"
 import Card from "../../components/Card/Card"
 import GlobalContext from "../../context/GlobalContext"
@@ -43,7 +43,11 @@ function Home() {
         //         </div>
         //     </section>
         // </main>
-        <Main />
+        <main>
+            <div className="container">
+                <h1>Home Page</h1>
+            </div>
+        </main>
     )
 }
 

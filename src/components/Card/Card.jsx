@@ -1,6 +1,9 @@
 import style from "./Card.module.css"
 import { flags } from "../../config.js"
 import placeholder from "../../assets/placeholder.jpg"
+//Font Awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faStar, faStarHalfAlt, faStar as faStarEmpty } from "@fortawesome/free-solid-svg-icons"
 
 
 function Card({ item = {} }) {
@@ -11,6 +14,7 @@ function Card({ item = {} }) {
     const pathImage = "https://image.tmdb.org/t/p/w500"
     const languageFlag = flags[original_language]
 
+    const stars = Math.ceil((vote_average || 0) / 2)
 
     return (
         <div className={style.card}>
@@ -28,6 +32,15 @@ function Card({ item = {} }) {
                         <img className={style.flag_image} src={languageFlag} />
                     </div>
                     <p><span>Vote:</span> {vote_average}</p>
+                    <div className={style.stars}>
+                        {[...Array(5)].map((_, index) => (
+                            <FontAwesomeIcon
+                                key={index}
+                                icon={index < stars ? faStar : faStarEmpty}
+                                className={`${index < stars ? style.star_full : style.star_empty}`}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

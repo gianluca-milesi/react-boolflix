@@ -43,7 +43,8 @@
     background-color: #212121;
     color: white;
     border-radius: 10px;
-    padding: 0 0.5rem;
+    padding: 0 0.25rem;
+    color: #1cc88c;
 }
 
 .language {
@@ -56,4 +57,14 @@
     width: 30px;
     height: auto;
     display: block;
+}
+
+
+/* UTILITIES */
+.star_full {
+    color: #1cc88c;
+}
+
+.star_empty {
+    color: #e4e5e9;
 }

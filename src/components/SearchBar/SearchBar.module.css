@@ -10,6 +10,10 @@
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.75);
 }
 
+.search_bar:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.75);
+}
+
 .search_button {
     padding: 0.5rem 0.75rem;
     border: none;

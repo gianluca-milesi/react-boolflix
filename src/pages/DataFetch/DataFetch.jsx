@@ -1,13 +1,13 @@
-import style from "./Main.module.css"
+import style from "./DataFetch.module.css"
 //Components
-import ItemList from "../ItemList/ItemList";
+import ItemList from "../../components/ItemList/ItemList";
 //Context
 import GlobalContext from "../../context/GlobalContext";
 //Hook
 import { useContext } from "react";
 
 
-function Main() {
+function DataFetch() {
 
     const { movies, series } = useContext(GlobalContext)
 
@@ -19,4 +19,4 @@ function Main() {
     )
 }
 
-export default Main
+export default DataFetch
