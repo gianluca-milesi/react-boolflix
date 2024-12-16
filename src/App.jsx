@@ -54,7 +54,7 @@ function App() {
         <Routes>
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/about" element={<About />}></Route>
+            <Route path="/tv-series" element={<About />}></Route>
             <Route path="/search" element={<DataFetch />}></Route>
           </Route>
           <Route element={<BlankLayout />}>

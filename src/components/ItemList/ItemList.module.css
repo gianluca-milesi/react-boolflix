@@ -1,0 +1,42 @@
+.scroll_container::-webkit-scrollbar {
+    display: none;
+}
+
+.fetched_data_section {
+    position: relative;
+    width: 100%;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll_controls {
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.scroll_button_left,
+.scroll_button_right {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.scroll_container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.scroll_item {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}

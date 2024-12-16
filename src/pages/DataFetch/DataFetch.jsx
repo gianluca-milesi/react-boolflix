@@ -13,8 +13,8 @@ function DataFetch() {
 
     return (
         <main>
-            <ItemList title="Movies" items={movies} />
-            <ItemList title="TV Shows" items={series} />
+            <ItemList title="Movies" items={movies} id="movies"/>
+            <ItemList title="TV Shows" items={series} id="series"/>
         </main>
     )
 }

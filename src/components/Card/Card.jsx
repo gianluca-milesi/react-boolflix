@@ -8,19 +8,19 @@ import { faStar, faStar as faStarEmpty } from "@fortawesome/free-solid-svg-icons
 
 function Card({ item = {} }) {
 
-    const { poster_path, title, original_title, original_language, vote_average, overview } = item //Movies
+    const { poster_path, title, original_title, original_language, vote_average, overview, release_date } = item //Movies
     const { name, original_name } = item //TV Series
 
-    const pathImage = "https://image.tmdb.org/t/p/w342"
+    const pathImage = poster_path ? `https://image.tmdb.org/t/p/w342${poster_path}` : "https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
     const languageFlag = flags[original_language]
 
-    const stars = Math.ceil((vote_average || 0) / 2)
+    const stars = Math.ceil((vote_average) / 2)
 
     return (
         <>
             <div className={style.card}>
                 <figure>
-                    <img className={style.film_image} src={`${pathImage}${poster_path}` || placeholder} />
+                    <img className={style.film_image} src={pathImage} />
                 </figure>
                 <div className={style.card_body}>
                     <div className={style.titles}>
@@ -33,8 +33,9 @@ function Card({ item = {} }) {
                             <p><span>Language:</span> {original_language}</p>
                             <img className={style.flag_image} src={languageFlag} />
                         </div>
+                        <p>{release_date}</p>
                         <div className={style.stars}>
-                            {[...Array(5)].map((_, index) => (
+                            {[...Array(5)].map((_, index) => ( //... rende Array(5) vuoto iterabile
                                 <FontAwesomeIcon
                                     key={index}
                                     icon={index < stars ? faStar : faStarEmpty}
